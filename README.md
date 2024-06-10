@@ -1,50 +1,67 @@
-# Welcome to your Expo app 👋
+[![Open Freestyle.sh](https://www.freestyle.sh/github-hero.png)](https://www.freestyle.sh/)
+# freestyle-react-native-template
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
 
-1. Install dependencies
+[freestyle.sh](https://www.freestyle.sh) is a cloud platform in early development that replaces traditional databases with persistent javascript objects. Write code as if your data is in memory and never think about it's underlying storage mechanisms again. We'll statically and dynamically optimize your code to make efficient queries inside our cloudstate environment.
+```js
+// The @cloudstate decorator makes this class's data persistent.
+// Data can only be augmented and retrieved through the class's
+// methods. There's nothing you have to do for your data to be
+// saved, it's automatically saved for you.
+@cloudstate
+class Counter {
 
-   ```bash
-   npm install
-   ```
+  // Giving a class a static id makes it a singleton which you
+  // can reference in other places in your code.
+  static id = "counter";
 
-2. Start the app
+  // This data is automatically persisted for you.
+  count = 0;
+  increment() {
+    this.count++;
+  }
+  getCount() {
+    return this.count;
+  }
+}
 
-   ```bash
-    npx expo start
-   ```
+// Gets a reference to the singleton instance of Counter.
+// Your methods are executed and optimized inside your
+// cloudstate database, not in your web server.
+const counter = useCloud<typeof Counter>("counter");
 
-In the output, you'll find options to open the app in a
+// Call a method on counter from anywhere in your backend or
+// frontend code to execute the method on the database.
+await counter.increment();
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Developing Locally
+> Please note that cloudstate is not persistent during local development. It will be cleared when you restart the dev server. If you significantly change your data models during development, restart the dev server to clear the data.
 
-## Learn more
+install dependencies
+```
+npm i
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+run the development server
+```
+npx freestyle dev
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Ready to Deploy
+build your project
+```
+npx freestyle build
+```
 
-## Join the community
+log into freestyle using github
+```
+npx freestyle login
+```
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+deploy to freestyle.sh (beta)
+```
+npx freestyle deploy
+```
