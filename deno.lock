@@ -1,0 +1,51 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:hono": "npm:hono@4.4.11"
+    },
+    "npm": {
+      "hono@4.4.11": {
+        "integrity": "sha512-R5RADpjoRsR3/VsnFovpsYNLPnC1f+FgdfsePk3qIgjb4D41Sg7uW5QCj41kzEOwXCjBg0sVvOZMvUNZ0DKB7g==",
+        "dependencies": {}
+      }
+    }
+  },
+  "remote": {},
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@babel/core@^7.20.0",
+        "npm:@expo/server@^0.4.3",
+        "npm:@expo/vector-icons@^14.0.0",
+        "npm:@react-navigation/native@^6.0.2",
+        "npm:@tanstack/react-query@^5.40.1",
+        "npm:@types/jest@^29.5.12",
+        "npm:@types/react-test-renderer@^18.0.7",
+        "npm:@types/react@~18.2.45",
+        "npm:expo-constants@~16.0.2",
+        "npm:expo-font@~12.0.7",
+        "npm:expo-linking@~6.3.1",
+        "npm:expo-router@~3.5.15",
+        "npm:expo-splash-screen@~0.27.5",
+        "npm:expo-status-bar@~1.12.1",
+        "npm:expo-system-ui@~3.0.6",
+        "npm:expo-web-browser@~13.0.3",
+        "npm:expo@~51.0.11",
+        "npm:freestyle-sh@^0.2.0-alpha.14",
+        "npm:jest-expo@~51.0.1",
+        "npm:jest@^29.2.1",
+        "npm:react-dom@18.2.0",
+        "npm:react-native-gesture-handler@~2.16.1",
+        "npm:react-native-reanimated@~3.10.1",
+        "npm:react-native-safe-area-context@4.10.1",
+        "npm:react-native-screens@3.31.1",
+        "npm:react-native-web@~0.19.10",
+        "npm:react-native@0.74.2",
+        "npm:react-test-renderer@18.2.0",
+        "npm:react@18.2.0",
+        "npm:typescript@~5.3.3"
+      ]
+    }
+  }
+}
